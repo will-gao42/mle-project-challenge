@@ -1,2 +1,16 @@
-model/*
+# Python
+__pycache__/
 *.pyc
+*.pyo
+
+# Model artifacts
+*.pkl
+
+# OS
+.DS_Store
+
+# data
+*.csv
+
+# Docker
+.dockerignore

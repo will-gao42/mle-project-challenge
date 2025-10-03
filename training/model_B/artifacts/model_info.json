@@ -1,0 +1,87 @@
+{
+  "algorithm": "RandomForest",
+  "preprocessing": "RobustScaler",
+  "feature_count": 33,
+  "features": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "sqft_above",
+    "sqft_basement",
+    "ppltn_qty",
+    "urbn_ppltn_qty",
+    "sbrbn_ppltn_qty",
+    "farm_ppltn_qty",
+    "non_farm_qty",
+    "medn_hshld_incm_amt",
+    "medn_incm_per_prsn_amt",
+    "hous_val_amt",
+    "edctn_less_than_9_qty",
+    "edctn_9_12_qty",
+    "edctn_high_schl_qty",
+    "edctn_some_clg_qty",
+    "edctn_assoc_dgre_qty",
+    "edctn_bchlr_dgre_qty",
+    "edctn_prfsnl_qty",
+    "per_urbn",
+    "per_sbrbn",
+    "per_farm",
+    "per_non_farm",
+    "per_less_than_9",
+    "per_9_to_12",
+    "per_hsd",
+    "per_some_clg",
+    "per_assoc",
+    "per_bchlr",
+    "per_prfsnl"
+  ],
+  "training_timestamp": "2025-10-03T16:52:31.325878",
+  "config": {
+    "data": {
+      "sales_path": "../../data/kc_house_data.csv",
+      "demographics_path": "../../data/zipcode_demographics.csv"
+    },
+    "features": {
+      "sales_columns": [
+        "price",
+        "bedrooms",
+        "bathrooms",
+        "sqft_living",
+        "sqft_lot",
+        "floors",
+        "sqft_above",
+        "sqft_basement",
+        "zipcode"
+      ]
+    },
+    "training": {
+      "random_state": 42,
+      "test_size": 0.2
+    },
+    "models": {
+      "random_forest": {
+        "n_estimators": 100
+      },
+      "gradient_boosting": {
+        "n_estimators": 100
+      },
+      "ridge": {
+        "alpha": 1.0
+      },
+      "lasso": {
+        "alpha": 0.1
+      }
+    },
+    "output": {
+      "artifacts_dir": "./artifacts"
+    }
+  },
+  "performance": {
+    "test_rmse": 185077.43081142506,
+    "test_r2": 0.7734197623139256,
+    "cv_rmse_mean": 162275.54844045415,
+    "cv_rmse_std": 7933.1093499446515
+  }
+}

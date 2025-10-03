@@ -1,0 +1,34 @@
+# Model B Training Configuration (Improved Model)
+
+data:
+  sales_path: "../../data/kc_house_data.csv"
+  demographics_path: "../../data/zipcode_demographics.csv"
+
+features:
+  sales_columns:
+    - 'price'
+    - 'bedrooms'
+    - 'bathrooms'
+    - 'sqft_living'
+    - 'sqft_lot'
+    - 'floors'
+    - 'sqft_above'
+    - 'sqft_basement'
+    - 'zipcode'
+
+training:
+  random_state: 42
+  test_size: 0.2
+
+models:
+  random_forest:
+    n_estimators: 100
+  gradient_boosting:
+    n_estimators: 100
+  ridge:
+    alpha: 1.0
+  lasso:
+    alpha: 0.1
+
+output:
+  artifacts_dir: "./artifacts"
